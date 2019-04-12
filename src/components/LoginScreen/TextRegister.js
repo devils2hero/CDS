@@ -9,15 +9,10 @@ export default class TextRegister extends Component {
     return (
       <View>
         <TouchableHighlight
-          style={{
-            height: 15,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center"
-          }}
+          style={styles.containerTextRegister}
           onPress={() => this.onClickListener("register")}
         >
-          <Text style={{ color: "#FFFFFF", fontSize: 15 }}>
+          <Text style={styles.textStyleRegister}>
             Bạn chưa có tài khoản? ĐĂNG KÝ
           </Text>
         </TouchableHighlight>
@@ -25,3 +20,15 @@ export default class TextRegister extends Component {
     );
   }
 }
+const styles = StyleSheet.create({
+  containerTextRegister: {
+    height: 15,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  textStyleRegister: {
+    color: "#FFFFFF",
+    fontSize: 15
+  }
+});
