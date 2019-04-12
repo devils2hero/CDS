@@ -9,4 +9,4 @@ import Login from "./src/components/LoginScreen/Login";
 import Register from "./src/components/RegisterScreen/Register";
 import SplashScreen from "./src/components/SplashScreen/SplashScreen";
 import { name as appName } from "./app.json";
-AppRegistry.registerComponent(appName, () => Login);
+AppRegistry.registerComponent(appName, () => Register);
