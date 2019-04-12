@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, ImageBackground } from "react-native";
+import { View, ImageBackground, StyleSheet } from "react-native";
 import Logo from "../LoginScreen/Logo";
 import Slogan from "../SplashScreen/Slogan";
 import ButtonStart from "./ButtonStart";
