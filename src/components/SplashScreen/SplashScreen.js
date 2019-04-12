@@ -12,9 +12,7 @@ export default class SplashScreen extends Component {
           style={{ width: "100%", height: "100%" }}
           source={require("../../assets/images/backgroundlogin.png")}
         >
-          <View
-            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-          >
+          <View style={styles.bodySplashScreen}>
             <Logo />
             <Slogan />
             <ButtonStart />
@@ -25,3 +23,10 @@ export default class SplashScreen extends Component {
     );
   }
 }
+const styles = StyleSheet.create({
+  bodySplashScreen: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+});
