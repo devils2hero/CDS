@@ -17,23 +17,27 @@ export default class ButtonRegister extends Component {
   render() {
     return (
       <View>
-        <TouchableHighlight
-          style={{
-            height: 40,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            marginBottom: 20,
-            width: 200,
-            borderRadius: 30,
-            backgroundColor: "#FF9800"
-          }}
-        >
-          <Text style={{ color: "#FFFFFF", fontWeight: "bold", fontSize: 15 }}>
-            ĐĂNG KÝ
-          </Text>
+        <TouchableHighlight style={styles.containerButtonRegister}>
+          <Text style={styles.textStyleRegister}>ĐĂNG KÝ</Text>
         </TouchableHighlight>
       </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  containerButtonRegister: {
+    height: 40,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+    width: 200,
+    borderRadius: 30,
+    backgroundColor: "#FF9800"
+  },
+  textStyleRegister: {
+    color: "#FFFFFF",
+    fontWeight: "bold",
+    fontSize: 15
+  }
+});
