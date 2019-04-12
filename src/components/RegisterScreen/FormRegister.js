@@ -7,7 +7,7 @@ export default class FormRegister extends Component {
       <View>
         <View style={styles.containerFormRegister}>
           <TextInput
-            style={{}}
+            style={styles.textInputStyle}
             placeholderTextColor="#727C8E"
             placeholder="Số điện thoại"
             keyboardType="phone-pad"
