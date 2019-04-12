@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { View, Text, TouchableHighlight, Alert } from "react-native";
+import {
+  View,
+  Text,
+  TouchableHighlight,
+  Alert,
+  StyleSheet
+} from "react-native";
 
 export default class TextRegister extends Component {
   onClickListener = viewId => {
