@@ -1,5 +1,11 @@
 import React, { Component } from "react";
-import { View, Text, TouchableHighlight, Alert } from "react-native";
+import {
+  View,
+  Text,
+  TouchableHighlight,
+  Alert,
+  StyleSheet
+} from "react-native";
 
 export default class TextBottom extends Component {
   onClickListener = viewId => {
@@ -7,18 +13,21 @@ export default class TextBottom extends Component {
   };
   render() {
     return (
-      <View
-        style={{
-          height: 15,
-          justifyContent: "center",
-          alignItems: "center",
-          marginBottom: 20
-        }}
-      >
-        <Text style={{ color: "#FFFFFF", fontSize: 15 }}>
-          Phát triển bởi 3HTech
-        </Text>
+      <View style={styles.containerTextBottomLogin}>
+        <Text style={styles.textStyleBottomLogin}>Phát triển bởi 3HTech</Text>
       </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  containerTextBottomLogin: {
+    height: 15,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20
+  },
+  textStyleBottomLogin: {
+    color: "#FFFFFF",
+    fontSize: 15
+  }
+});
