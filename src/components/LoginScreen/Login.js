@@ -32,13 +32,7 @@ export default class Login extends Component {
           style={{ width: "100%", height: "100%" }}
           source={require("../../assets/images/backgroundlogin.png")}
         >
-          <View
-            style={{
-              flex: 1,
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
+          <View style={styles.containerLogin}>
             <Logo />
             <FormLogin />
             <View style={{ flexDirection: "row" }}>
@@ -53,3 +47,11 @@ export default class Login extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  containerLogin: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  }
+});
