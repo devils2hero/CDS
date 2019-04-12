@@ -5,8 +5,7 @@ import {
   TouchableHighlight,
   Button,
   Alert,
-  Text,
-  StyleSheet
+  Text
 } from "react-native";
 export default class ButtonSubmit extends Component {
   constructor() {
