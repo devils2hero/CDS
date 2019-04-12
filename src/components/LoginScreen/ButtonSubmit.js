@@ -5,7 +5,8 @@ import {
   TouchableHighlight,
   Button,
   Alert,
-  Text
+  Text,
+  StyleSheet
 } from "react-native";
 export default class ButtonSubmit extends Component {
   constructor() {
@@ -17,18 +18,7 @@ export default class ButtonSubmit extends Component {
   render() {
     return (
       <View>
-        <TouchableHighlight
-          style={{
-            height: 40,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            marginBottom: 20,
-            width: 200,
-            borderRadius: 30,
-            backgroundColor: "#FF9800"
-          }}
-        >
+        <TouchableHighlight style={styles.submitLogin}>
           <Text style={{ color: "#FFFFFF", fontWeight: "bold", fontSize: 15 }}>
             ĐĂNG NHẬP
           </Text>
@@ -37,3 +27,16 @@ export default class ButtonSubmit extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  submitLogin: {
+    height: 40,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+    width: 200,
+    borderRadius: 30,
+    backgroundColor: "#FF9800"
+  }
+});
