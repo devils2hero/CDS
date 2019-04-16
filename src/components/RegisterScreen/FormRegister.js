@@ -46,7 +46,7 @@ export default class FormRegister extends Component {
           <TextInput
             style={styles.textInputStyle}
             placeholderTextColor="#727C8E"
-            placeholder="Nhập lại mật khẩu"
+            placeholder="Nhập lại mật khẩu nhé"
             secureTextEntry={true}
             underlineColorAndroid="transparent"
             onChangeText={password => this.setState({ password })}

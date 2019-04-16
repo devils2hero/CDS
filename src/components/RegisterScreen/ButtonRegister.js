@@ -18,7 +18,7 @@ export default class ButtonRegister extends Component {
     return (
       <View>
         <TouchableHighlight style={styles.containerButtonRegister}>
-          <Text style={styles.textStyleRegister}>ĐĂNG KÝ</Text>
+          <Text style={styles.textStyleRegister}>ĐĂNG KÝ TÀI KHOẢN</Text>
         </TouchableHighlight>
       </View>
     );
