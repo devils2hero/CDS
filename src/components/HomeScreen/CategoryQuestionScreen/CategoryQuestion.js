@@ -153,7 +153,6 @@ export default class CategoryQuestion extends Component {
               Danh sách lĩnh vực
             </Text>
           </View>
-
           <View
             style={{
               width: "25%",
