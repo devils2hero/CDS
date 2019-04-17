@@ -14,17 +14,6 @@ import {
 import { Icon, SearchBar, TabBar } from "@ant-design/react-native";
 import DatePicker from "react-native-datepicker";
 export default class ProfileScreen extends Component {
-  state = {
-    modalVisible: false
-  };
-  setModalVisible(visible) {
-    this.setState({ modalVisible: visible });
-  }
-  constructor(props) {
-    super(props);
-    this.state = { date: "1995-09-15" };
-  }
-
   render() {
     return (
       <View>
@@ -70,12 +59,7 @@ export default class ProfileScreen extends Component {
                 >
                   Tên
                 </Text>
-                <TouchableOpacity
-                  style={{ width: "70%", height: 50 }}
-                  onPress={() => {
-                    this.setModalVisible(true);
-                  }}
-                >
+                <TouchableOpacity style={{ width: "70%", height: 50 }}>
                   <Text
                     style={{
                       width: "70%",
@@ -105,12 +89,7 @@ export default class ProfileScreen extends Component {
                 >
                   Biệt danh
                 </Text>
-                <TouchableOpacity
-                  style={{ width: "70%", height: 50 }}
-                  onPress={() => {
-                    this.setModalVisible(true);
-                  }}
-                >
+                <TouchableOpacity style={{ width: "70%", height: 50 }}>
                   <Text
                     style={{
                       width: "70%",
@@ -140,12 +119,7 @@ export default class ProfileScreen extends Component {
                 >
                   Ngày sinh
                 </Text>
-                <TouchableOpacity
-                  style={{ width: "70%", height: 50 }}
-                  onPress={() => {
-                    this.setModalVisible(true);
-                  }}
-                >
+                <TouchableOpacity style={{ width: "70%", height: 50 }}>
                   <Text
                     style={{
                       width: "70%",
@@ -175,12 +149,7 @@ export default class ProfileScreen extends Component {
                 >
                   Giới tính
                 </Text>
-                <TouchableOpacity
-                  style={{ width: "70%", height: 50 }}
-                  onPress={() => {
-                    this.setModalVisible(true);
-                  }}
-                >
+                <TouchableOpacity style={{ width: "70%", height: 50 }}>
                   <Text
                     style={{
                       width: "70%",
@@ -305,196 +274,6 @@ export default class ProfileScreen extends Component {
                   </Text>
                 </TouchableOpacity>
               </View>
-            </View>
-            <View
-              style={{
-                width: 300,
-                height: 300
-              }}
-            >
-              <Modal
-                animationType="fade"
-                transparent={true}
-                visible={this.state.modalVisible}
-                presentationStyle="overFullScreen"
-                onRequestClose={() => {
-                  Alert.alert("Modal has been closed.");
-                }}
-              >
-                <View
-                  style={{
-                    marginTop: 70,
-                    padding: 20,
-                    height: 500,
-                    width: 400,
-                    // alignSelf: "center",
-                    // justifyContent: "center",
-                    position: "absolute",
-                    // alignItems: "center"
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: "#FFFFFF",
-                    alignSelf: "center",
-                    borderRadius: 15,
-                    borderWidth: 1,
-                    borderColor: "#FFFFFF"
-                  }}
-                >
-                  <View style={{ flexDirection: "column" }}>
-                    <View
-                      style={{
-                        backgroundColor: "#FFFFFF",
-                        width: 280,
-                        height: 40,
-                        alignItems: "center"
-                      }}
-                    >
-                      <Text
-                        style={{
-                          fontSize: 20,
-                          color: "#727C8E",
-                          textAlign: "center",
-                          textAlignVertical: "center",
-                          marginBottom: 10
-                        }}
-                      >
-                        Cập nhật thông tin cá nhân
-                      </Text>
-                    </View>
-                    <View style={styles.contentTextInputModal}>
-                      <TextInput
-                        style={styles.textInputModal}
-                        placeholderTextColor="#727C8E"
-                        placeholder="Trần Đức Hùng"
-                        underlineColorAndroid="transparent"
-                        onChangeText={email => this.setState({ email })}
-                      />
-                    </View>
-                    <View style={styles.contentTextInputModal}>
-                      <TextInput
-                        style={styles.textInputModal}
-                        placeholderTextColor="#727C8E"
-                        placeholder="Red Fire"
-                        underlineColorAndroid="transparent"
-                        onChangeText={email => this.setState({ email })}
-                      />
-                    </View>
-
-                    <DatePicker
-                      style={{
-                        width: 280,
-                        height: 40,
-                        marginBottom: 12
-                      }}
-                      date={this.state.date}
-                      mode="date"
-                      format="YYYY-MM-DD"
-                      minDate="2016-05-01"
-                      maxDate="2019-04-20"
-                      confirmBtnText="Confirm"
-                      cancelBtnText="Cancel"
-                      customStyles={{
-                        dateIcon: {
-                          position: "absolute",
-                          left: 0,
-                          top: 4,
-                          marginLeft: 0
-                        },
-                        dateInput: {
-                          marginLeft: 36,
-                          borderBottomRightRadius: 10,
-                          borderTopRightRadius: 10
-                        }
-                        // ... You can check the source to find the other keys.
-                      }}
-                      onDateChange={date => {
-                        this.setState({ date: date });
-                      }}
-                    />
-                    <View style={styles.contentTextInputModal}>
-                      <TextInput
-                        style={styles.textInputModal}
-                        placeholderTextColor="#727C8E"
-                        placeholder="Nam"
-                        underlineColorAndroid="transparent"
-                        onChangeText={email => this.setState({ email })}
-                      />
-                    </View>
-                    <View style={styles.contentTextInputModal}>
-                      <TextInput
-                        style={styles.textInputModal}
-                        placeholderTextColor="#727C8E"
-                        placeholder="duchung.1510@gmail.com"
-                        underlineColorAndroid="transparent"
-                        onChangeText={email => this.setState({ email })}
-                      />
-                    </View>
-                    <View style={styles.contentTextInputModal}>
-                      <TextInput
-                        style={styles.textInputModal}
-                        placeholderTextColor="#727C8E"
-                        placeholder="Số nhà 09, tổ dân phố 18, Đức Thắng"
-                        underlineColorAndroid="transparent"
-                      />
-                    </View>
-
-                    <View
-                      style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        alignSelf: "center"
-                      }}
-                    >
-                      <TouchableHighlight
-                        style={{
-                          height: 40,
-                          flexDirection: "row",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          width: 100,
-                          borderRadius: 30,
-                          backgroundColor: "#FF9800",
-                          margin: 20
-                        }}
-                      >
-                        <Text
-                          style={{
-                            color: "#FFFFFF",
-                            fontSize: 15
-                          }}
-                        >
-                          ĐỒNG Ý
-                        </Text>
-                      </TouchableHighlight>
-                      <TouchableHighlight
-                        style={{
-                          height: 40,
-                          flexDirection: "row",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          width: 100,
-                          borderRadius: 30,
-                          backgroundColor: "#DEDEDE",
-                          margin: 20
-                        }}
-                        onPress={() => {
-                          this.setModalVisible(!this.state.modalVisible);
-                        }}
-                      >
-                        <Text
-                          style={{
-                            color: "#727C8E",
-                            fontSize: 15
-                          }}
-                        >
-                          HỦY BỎ
-                        </Text>
-                      </TouchableHighlight>
-                    </View>
-                  </View>
-                </View>
-              </Modal>
             </View>
           </View>
         </View>

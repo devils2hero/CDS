@@ -3,7 +3,7 @@ import { Text, View, Image } from "react-native";
 import { Icon, SearchBar, TabBar, Badge } from "@ant-design/react-native";
 import HomeScreen from "./HomeScreen";
 import ProfileScreen from "./ProfileScreen/ProfileScreen";
-import QuestionScreen from "./QuestionScreen";
+import Question from "./QuestionScreen/Question";
 import CategoryQuestion from "./CategoryQuestionScreen/CategoryQuestion";
 import DetailCategory from "./DetailCategoryScreen/DetailCategory";
 import TabBarItem from "@ant-design/react-native/lib/tab-bar/TabBarItem";
@@ -25,6 +25,9 @@ export default class CDS extends Component {
         break;
       case "DetailCategory":
         return <DetailCategory />;
+        break;
+      case "QuestionScreen":
+        return <Question />;
         break;
       default:
         return <CategoryQuestion />;
@@ -48,7 +51,7 @@ export default class CDS extends Component {
           selected={this.state.selectedTab === "blueTab"}
           onPress={() => this.onChangeTab("blueTab")}
         >
-          {this.renderContent("QuestionScreen")}
+          {this.renderContent("CategoryQuestion")}
         </TabBar.Item>
 
         <TabBar.Item
@@ -58,6 +61,15 @@ export default class CDS extends Component {
         >
           {this.renderContent("DetailCategory")}
         </TabBar.Item>
+
+        <TabBar.Item
+          icon={<Icon name="book" style={{ marginTop: 10 }} />}
+          selected={this.state.selectedTab === "pinkTab"}
+          onPress={() => this.onChangeTab("pinkTab")}
+        >
+          {this.renderContent("QuestionScreen")}
+        </TabBar.Item>
+
         <TabBar.Item
           icon={<Icon name="profile" style={{ marginTop: 10 }} />}
           selected={this.state.selectedTab === "greenTab"}
