@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   UIManager,
   findNodeHandle,
-  TouchableWithoutFeedback,
   Animated,
   Dimensions
 } from "react-native";
@@ -38,7 +37,6 @@ export default class TestAnimation extends Component {
       });
     });
   }
-
   _moveBall = () => {
     Animated.spring(this.moveAnimation, {
       toValue: { x: width / 2 - 50, y: height / 2 - 50 }
@@ -81,36 +79,9 @@ export default class TestAnimation extends Component {
   };
   render() {
     return (
-      // <View style={styles.container}>
-      //   <View
-      // style={styles.measure}
-      // ref={ref => (this.view = ref)}
-      // onLayout={({ nativeEvent }) => {
-      //   this.setState({
-      //     measurements: nativeEvent.layout
-      //   });
-      // }}
-      //   >
-      //     <Text>Measure Me</Text>
-      //   </View>
-      //   <TouchableOpacity onPress={() => this.measure()}>
-      //     <Text>Measure With UIManager</Text>
-      //   </TouchableOpacity>
-      //   <View>
-      //     <Text>Width: {this.state.measurements.width}</Text>
-      //     <Text>Height: {this.state.measurements.height}</Text>
-      //     <Text>X: {this.state.measurements.x}</Text>
-      //     <Text>Y: {this.state.measurements.y}</Text>
-      //   </View>
-      // </View>
       <View style={styles.container}>
-        {/* <Animated.View style={[styles.animationView,
-            // {opacity: this.state.fadeValue}
-            { left: this.state.xValue }
-          ]}>
-          </Animated.View> */}
-        <Animated.View
-          style={[styles.tennisBall, this.moveAnimation.getLayout()]}
+        <View
+          style={styles.measure}
           ref={ref => (this.view = ref)}
           onLayout={({ nativeEvent }) => {
             this.setState({
@@ -118,50 +89,71 @@ export default class TestAnimation extends Component {
             });
           }}
         >
-          <TouchableWithoutFeedback
-            style={styles.button}
-            onPress={this._moveBall}
-          >
-            <Text style={styles.buttonText}>Press</Text>
-          </TouchableWithoutFeedback>
-        </Animated.View>
+          <Text>Measure Me</Text>
+        </View>
+        <TouchableOpacity onPress={() => this.measure()}>
+          <Text>Measure With UIManager</Text>
+        </TouchableOpacity>
+        <View>
+          <Text>Width: {this.state.measurements.width}</Text>
+          <Text>Height: {this.state.measurements.height}</Text>
+          <Text>X: {this.state.measurements.x}</Text>
+          <Text>Y: {this.state.measurements.y}</Text>
+        </View>
       </View>
+      //   <View style={styles.container}>
+      //     {/* <Animated.View style={[styles.animationView,
+      //       // {opacity: this.state.fadeValue}
+      //       { left: this.state.xValue }
+      //     ]}>
+      //     </Animated.View> */}
+      //     <Animated.View
+      //       style={[styles.tennisBall, this.moveAnimation.getLayout()]}
+      //     >
+      //       <TouchableWithoutFeedback
+      //         style={styles.button}
+      //         onPress={this._moveBall}
+      //       >
+      //         <Text style={styles.buttonText}>Press</Text>
+      //       </TouchableWithoutFeedback>
+      //     </Animated.View>
+      //   </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#ecf0f1"
-  },
-  tennisBall: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "greenyellow",
-    borderRadius: 100,
-    width: 100,
-    height: 100
-  },
-  button: {
-    paddingTop: 24,
-    paddingBottom: 24
-  },
-  buttonText: {
-    fontSize: 24,
-    color: "#333"
-  }
-});
 // const styles = StyleSheet.create({
 //   container: {
 //     flex: 1,
+//     backgroundColor: "#ecf0f1"
+//   },
+//   tennisBall: {
+//     display: "flex",
 //     justifyContent: "center",
 //     alignItems: "center",
-//     backgroundColor: "#F5FCFF"
+//     backgroundColor: "greenyellow",
+//     borderRadius: 100,
+//     width: 100,
+//     height: 100
 //   },
-//   measure: {
-//     padding: 30,
-//     borderWidth: 1
+//   button: {
+//     paddingTop: 24,
+//     paddingBottom: 24
+//   },
+//   buttonText: {
+//     fontSize: 24,
+//     color: "#333"
 //   }
 // });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#F5FCFF"
+  },
+  measure: {
+    padding: 30,
+    borderWidth: 1
+  }
+});
