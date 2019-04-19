@@ -3,7 +3,7 @@ import { Text, View, Image } from "react-native";
 import { Icon, SearchBar, TabBar, Badge } from "@ant-design/react-native";
 import HomeScreen from "./HomeScreen";
 import ProfileScreen from "./ProfileScreen/ProfileScreen";
-import Question from "./QuestionScreen/Question";
+import TestAnimation from "./QuestionScreen/TestAnimation";
 import CategoryQuestion from "./CategoryQuestionScreen/CategoryQuestion";
 import DetailCategory from "./DetailCategoryScreen/DetailCategory";
 import TabBarItem from "@ant-design/react-native/lib/tab-bar/TabBarItem";
@@ -26,11 +26,11 @@ export default class CDS extends Component {
       case "DetailCategory":
         return <DetailCategory />;
         break;
-      case "QuestionScreen":
-        return <Question />;
+      case "TestAnimation":
+        return <TestAnimation />;
         break;
       default:
-        return <CategoryQuestion />;
+        return <TestAnimation />;
         break;
     }
   }
@@ -67,7 +67,7 @@ export default class CDS extends Component {
           selected={this.state.selectedTab === "pinkTab"}
           onPress={() => this.onChangeTab("pinkTab")}
         >
-          {this.renderContent("QuestionScreen")}
+          {this.renderContent("TestAnimation")}
         </TabBar.Item>
 
         <TabBar.Item

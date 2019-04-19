@@ -70,11 +70,11 @@ class FlatListItem extends Component {
                   backgroundColor: "#FFFFFF",
                   borderBottomLeftRadius: 15,
                   borderTopLeftRadius: 15,
-                  marginRight: 5,
                   paddingTop: 3,
                   paddingBottom: 3,
                   paddingLeft: 5,
-                  paddingRight: 5
+                  paddingRight: 5,
+                  marginRight: 2
                 }}
               >
                 <Text
